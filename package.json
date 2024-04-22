@@ -4,7 +4,7 @@
    "main": "index.js",
    "license": "MIT",
    "scripts": {
-      "start": "ts-node src/index.ts",
+      "start": "node ./dist/infra/web/server.js",
       "dev": "set NODE_ENV=dev&& nodemon -r tsconfig-paths/register src/infra/web/server.ts",
       "prod": "nodemon -r tsconfig-paths/register src/infra/web/server.ts",
       "dev:server": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/infra/web/server.ts",
