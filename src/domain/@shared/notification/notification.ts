@@ -1,7 +1,7 @@
 export type NotificationErrorProps = {
   message: string;
   context: string;
-}
+};
 
 export default class Notification {
   private _errors: NotificationErrorProps[] = [];
@@ -20,9 +20,9 @@ export default class Notification {
 
   messages(context?: string): string {
     let message = '';
-    
+
     this._errors.forEach(error => {
-      if(context === undefined || context === error.context) {
+      if (context === undefined || context === error.context) {
         message += `${error.context}: ${error.message},`;
       }
     });

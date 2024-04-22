@@ -9,7 +9,7 @@ const doc = {
       title: "API de Gestão de funcionários",
       description: "Documentation of Employees API."
   },
-  host: "localhost:3333",
+  host: `localhost:3000`,
   basePath: "/",
   schemes: ['http', 'https'],
   consumes: ['application/json'],

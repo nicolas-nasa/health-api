@@ -1,6 +1,6 @@
-import EventDispatcherInterface from "../event-dispatcher.interface";
-import EventHandlerInterface from "../event-handler.interface";
-import eventInterface from "../event.interface";
+import EventDispatcherInterface from '../event-dispatcher.interface';
+import EventHandlerInterface from '../event-handler.interface';
+import eventInterface from '../event.interface';
 
 export default class EventDispatcher implements EventDispatcherInterface {
   private eventHandlers: { [eventName: string]: EventHandlerInterface[] } = {};
@@ -18,7 +18,9 @@ export default class EventDispatcher implements EventDispatcherInterface {
 
   unregister(eventName: string, eventHandler: EventHandlerInterface): void {
     if (this.eventHandlers[eventName]) {
-      const index = this.eventHandlers[eventName].findIndex((e) => e.handle === eventHandler.handle);
+      const index = this.eventHandlers[eventName].findIndex(
+        e => e.handle === eventHandler.handle,
+      );
       if (index !== -1) {
         this.eventHandlers[eventName].splice(index, 1);
       }
@@ -32,7 +34,7 @@ export default class EventDispatcher implements EventDispatcherInterface {
   notify(event: eventInterface): void {
     const eventName = event.eventData.constructor.name;
     if (this.eventHandlers[eventName]) {
-      this.eventHandlers[eventName].forEach((eventHandler) => {
+      this.eventHandlers[eventName].forEach(eventHandler => {
         eventHandler.handle(event);
       });
     }

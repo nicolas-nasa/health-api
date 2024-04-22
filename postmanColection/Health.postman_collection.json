@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "1060e8ab-5d64-4538-a61e-358146ff6c59",
+		"name": "Health",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30647720"
+	},
+	"item": [
+		{
+			"name": "employees",
+			"item": [
+				{
+					"name": "csv register bulk",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Nicol/Downloads/Planilha sem título - Página1 (1).csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3001/employees/bulk",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"employees",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"nicolas almeida\",\r\n    \"rg\":\"390675003\",\r\n    \"email\":\"nicolas@gmail.com\",\r\n    \"address\":\"rua algo de algum lugar\",\r\n    \"bornAt\":\"1995-12-17T03:24:00\",\r\n    \"role\":\"nbew\",\r\n    \"sector\":\"nbew\",\r\n    \"taxIdentifier\":\"1111111\",\r\n    \"telefone\":\"11111111\",\r\n    \"cnpj\":\"novena\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/employees",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/employees/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"employees",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/employees/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/employees/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"name\":\"\",\r\n    \"rg\":\"\",\r\n    \"email\":\"\",\r\n    \"address\":\"\",\r\n    \"bornAt\":\"\",\r\n    \"role\":\"\",\r\n    \"sector\":\"\",\r\n    \"taxIdentifier\":\"\",\r\n    \"telefone\":\"\",\r\n    \"cnpj\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/employees/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "enterprises",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"novena\",\r\n    \"cnpj\":\"novena\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/enterprises",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"enterprises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/enterprises/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"enterprises",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/enterprises/find/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"enterprises",
+								"find",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/enterprises/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"enterprises",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"name\":\"\",\r\n    \"cnpj\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/enterprises/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"enterprises",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
